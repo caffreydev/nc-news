@@ -5,6 +5,7 @@ export const Navbar = () => {
         <nav>
             <div className="links">
             <Link to="/home">Home</Link>
+            <Link to="/articles">Articles</Link>
             </div>
         </nav>
     )
