@@ -1,2 +1,2 @@
-export { getArticles, getArticle } from './api.js';
+export { getArticles, getArticle, getComments } from './api.js';
 export { dateFormatter } from './date_formatter.js';
