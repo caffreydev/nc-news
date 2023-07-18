@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getArticle, dateFormatter } from "../utils"
-
+import { useParams } from "react-router-dom"
 
 export const Article = () => {
 
@@ -8,8 +8,15 @@ export const Article = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [errMsg, setErrMsg] = useState("Something went wrong, please navigate back to the Articles list and try again")
+    const [articleId, setArticleId] = useState(useParams().articleId)
     
-    const articleId = window.location.href.split('articles/')[1]
+   useEffect(() => {
+    setArticleId(() => {
+        return useParams().articleId
+    })
+   }, [window.location.hash])
+
+
 
     useEffect(() => {
         setLoading(true)
@@ -30,7 +37,7 @@ export const Article = () => {
             setLoading(false)
             setError(true)
         }) 
-    }, [])
+    }, [articleId])
 
 if (error) {
     return <p className="warning-text">{errMsg}</p>

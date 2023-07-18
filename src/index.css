@@ -178,7 +178,7 @@ nav .links >a:hover {
   grid-template-columns: 70vw 1fr;
   padding: 30px;
   column-gap: 20px;
-  grid-template-rows: 5vh 5vh 5vh 10vh;
+  grid-template-rows: 8vh 5vh 5vh 10vh;
 
 }
 
