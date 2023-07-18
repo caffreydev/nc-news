@@ -8,15 +8,9 @@ export const Article = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [errMsg, setErrMsg] = useState("Something went wrong, please navigate back to the Articles list and try again")
-    const [articleId, setArticleId] = useState(useParams().articleId)
-    
-   useEffect(() => {
-    setArticleId(() => {
-        return useParams().articleId
-    })
-   }, [window.location.hash])
 
 
+const {articleId} = useParams();
 
     useEffect(() => {
         setLoading(true)
