@@ -15,3 +15,11 @@ export const getArticle = (articleId) => {
     return data.article;
   });
 };
+
+export const getComments = (articleId) => {
+  return instance
+    .get(`/articles/${articleId}/comments?limit=500`)
+    .then(({ data }) => {
+      return data.comments;
+    });
+};
