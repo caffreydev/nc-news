@@ -8,7 +8,7 @@ export const Article = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [errMsg, setErrMsg] = useState("Something went wrong, please navigate back to the Articles list and try again")
-
+    const [userVote, setUserVote] = useState(0)
 
 const {articleId} = useParams();
 
@@ -33,6 +33,13 @@ const {articleId} = useParams();
         }) 
     }, [articleId])
 
+const incrementVote = () => {
+    if (userVote === 1) {
+        
+    }
+}
+
+
 if (error) {
     return <p className="warning-text">{errMsg}</p>
 } else if (loading) {
@@ -48,7 +55,7 @@ return (
         <h3>Article Text:</h3>
         <p className="article-body">{result.body}</p>
         <img src={result.article_img_url} alt="article_image"/>
-
+        <p>Votes: {result.votes + userVote} <span >⬆️</span> <span>⬇️</span></p>
     </div>
 )
 
