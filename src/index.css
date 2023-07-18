@@ -132,3 +132,39 @@ nav .links >a:hover {
 
 
 /*end of nav bar formatting */
+
+
+/* Formats articles list */
+
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style-type: none;
+}
+
+.article-list > li {
+  width: 500px;
+  border: black solid 4px;
+  padding: 18px;
+}
+
+.article-list > li:hover {
+  border-color: red;
+}
+
+
+.article-list > li > a {
+  color: black;
+}
+
+.article-list > li > a > img {
+  width: 300px;
+}
+
+.article-list > li > a:hover {
+  cursor: pointer;
+
+}
+
+/* end of articles list formatting */
