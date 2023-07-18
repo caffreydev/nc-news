@@ -36,7 +36,7 @@ export const ArticleList = () => {
             <main>
             <ul className="article-list">
             {results.map(article => {
-                return <ArticleListItem article={article} />
+                return <ArticleListItem key={article.article_id} article={article} />
             })}
             </ul>
             </main>
