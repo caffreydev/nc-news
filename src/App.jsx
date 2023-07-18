@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Route, Routes} from 'react-router-dom'
 
-import { Navbar, Home, ArticleList, Article } from './components'
+import { Navbar, Home, ArticleList, Article, BadPath } from './components'
 
 function App() {
  
@@ -15,6 +15,7 @@ function App() {
         <Route path="/home" element={<Home />}/>
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/articles/:articleId" element={<Article />} />
+        <Route path="*" element={<BadPath />} />
       </Routes>
     </>
   )
