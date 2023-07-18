@@ -9,3 +9,9 @@ export const getArticles = () => {
     return data.articles;
   });
 };
+
+export const getArticle = (articleId) => {
+  return instance.get(`/articles/${articleId}`).then(({ data }) => {
+    return data.article;
+  });
+};

@@ -168,3 +168,60 @@ nav .links >a:hover {
 }
 
 /* end of articles list formatting */
+
+
+
+/* Formatting for individual article page */
+.article-full {
+ 
+  display: grid;
+  grid-template-columns: 70vw 1fr;
+  padding: 30px;
+  column-gap: 20px;
+  grid-template-rows: 5vh 5vh 5vh 10vh;
+
+}
+
+.article-body {
+  align-self: ;
+}
+
+.article-full > * {
+  grid-column: 1;
+}
+
+
+
+.article-full > img {
+  width: 90%;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+@media screen and (max-width: 600px) {
+ 
+
+.article-full {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-full > img {
+
+  width: 300px;
+}
+}
+
+
+/* ends formatting for individual article page */
+
+
+
+/* formatting for warnings and errors */
+.warning-text {
+  color: red;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+/* ends formatting for warnings and errors */
