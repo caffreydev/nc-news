@@ -52,7 +52,6 @@ return (
         <p>Penned by {result.author}</p>
         <p>Topic of {result.topic}</p>
         <p>Published on {dateFormatter(result.created_at)}</p>
-        <h3>Article Text:</h3>
         <p className="article-body">{result.body}</p>
         <img src={result.article_img_url} alt="article_image"/>
     </div>

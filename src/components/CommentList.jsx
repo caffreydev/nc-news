@@ -33,7 +33,13 @@ export const CommentList = (props) => {
         return <p className="warning-text">{errMsg}</p>
     } else if (loading) {
         return <p>Please wait while comments load</p>
-    } 
+    } else if (result.length === 0) {
+        return (
+            <>
+        <h2>Comments:</h2>
+        <p>No comments yet, why not be the first to comment?!</p>
+            </>
+    )}
 
     return (
         <section>
