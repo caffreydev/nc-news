@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 import { getArticle, dateFormatter } from "../utils"
 import { useParams } from "react-router-dom"
+import { CommentList } from "./"
 
 export const Article = () => {
 
-    const [result, setResult] = useState([])
+    //state for article
+    const [result, setResult] = useState({})
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [errMsg, setErrMsg] = useState("Something went wrong, please navigate back to the Articles list and try again")
-
+    
 
 const {articleId} = useParams();
 
@@ -33,6 +35,10 @@ const {articleId} = useParams();
         }) 
     }, [articleId])
 
+useEffect(() => {
+
+})    
+
 if (error) {
     return <p className="warning-text">{errMsg}</p>
 } else if (loading) {
@@ -40,16 +46,17 @@ if (error) {
 } 
 
 return (
+    <>
     <div className="article-full">
         <h2>{result.title}</h2>
         <p>Penned by {result.author}</p>
         <p>Topic of {result.topic}</p>
-        <p>{dateFormatter(result.created_at)}</p>
-        <h3>Article Text:</h3>
+        <p>Published on {dateFormatter(result.created_at)}</p>
         <p className="article-body">{result.body}</p>
         <img src={result.article_img_url} alt="article_image"/>
-
     </div>
+    <CommentList articleId={articleId} />
+    </>
 )
 
 }
