@@ -199,6 +199,11 @@ nav .links >a:hover {
 }
 
 
+textarea {
+  width: 60vw;
+}
+
+
 @media screen and (max-width: 600px) {
  
 
@@ -224,9 +229,24 @@ nav .links >a:hover {
 
 
 
-/* formatting for warnings and errors */
+
+
+
+/* formatting for warnings, statuses, and errors */
 .warning-text {
   color: red;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.loading-text {
+  color: orangered;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.success-text {
+  color: green;
   font-weight: bolder;
   font-size: 1.5rem;
 }
