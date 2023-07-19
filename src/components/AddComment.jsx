@@ -51,7 +51,7 @@ const updateComment = (e) => {
     setNewComment(e.target.value)
 }
 
-return (<form target="" onSubmit={handleSubmit}>
+return (<form className="comment-form" target="" onSubmit={handleSubmit}>
     <textarea placeholder="I think this article is really interesting because ..." disabled={commentPending} value={newComment} onChange={updateComment}/>
     <input type="submit" value="Add Comment" disabled={commentPending}/>
     <p className={commentFailure ? "warning-text" : commentPending ? "loading-text" : "success-text"}

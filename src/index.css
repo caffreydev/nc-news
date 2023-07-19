@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
+  color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -202,6 +202,8 @@ nav .links >a:hover {
 textarea {
   width: 60vw;
 }
+
+
 
 
 @media screen and (max-width: 600px) {

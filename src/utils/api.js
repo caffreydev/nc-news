@@ -31,6 +31,5 @@ export const changeArticleVote = (articleId, value) => {
 };
 
 export const postComment = (articleId, commentBody) => {
-  console.log(commentBody);
   return instance.post(`/articles/${articleId}/comments`, commentBody);
 };
