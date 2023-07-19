@@ -23,3 +23,9 @@ export const getComments = (articleId) => {
       return data.comments;
     });
 };
+
+export const changeArticleVote = (articleId, value) => {
+  return instance.patch(`/articles/${articleId}`, {
+    inc_votes: value,
+  });
+};

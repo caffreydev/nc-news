@@ -3,9 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -195,6 +193,12 @@ nav .links >a:hover {
   grid-row: 1;
 }
 
+
+.vote-message {
+  color: blue;
+}
+
+
 @media screen and (max-width: 600px) {
  
 
@@ -207,6 +211,12 @@ nav .links >a:hover {
 
   width: 300px;
 }
+}
+
+.vote-arrows:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px blue;
+
 }
 
 
