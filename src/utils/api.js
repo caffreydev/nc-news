@@ -29,3 +29,7 @@ export const changeArticleVote = (articleId, value) => {
     inc_votes: value,
   });
 };
+
+export const getTopics = () => {
+  return instance.get('/topics');
+};
