@@ -59,11 +59,12 @@ const upVote = () => {
 
     changeArticleVote(articleId, 1)
     .catch(() => {
+        
         setVoteMessage("Oops, your vote hasn't worked, try again")
-        return currVote
+        setUserVote(currVote)
     })
 
-    return ++currVote;
+    return currVote + 1;
    })
 }
 
@@ -79,12 +80,13 @@ const downVote = () => {
      }
 
      changeArticleVote(articleId, -1)
-     .catch(() => {
+       .catch(() => {
+        
         setVoteMessage("Oops, your vote hasn't worked, try again")
-        return currVote
+        setUserVote(currVote)
     })
 
-     return --currVote;
+     return currVote - 1;
     })
  }
 
