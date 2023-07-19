@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react"
 import { getArticle, dateFormatter, changeArticleVote } from "../utils"
 import { useParams } from "react-router-dom"
-import { CommentList } from "./"
+import { AddComment, CommentList } from "./"
 
-export const Article = () => {
+export const Article = (props) => {
 
-    //state for article
+    //state for retrieving article data
     const [result, setResult] = useState({})
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [errMsg, setErrMsg] = useState("Something went wrong, please navigate back to the Articles list and try again")
+    
+    //state for votes
     const [userVote, setUserVote] = useState(0)
     const [voteMessage, setVoteMessage] = useState("Click arrow to up vote or down vote")
+
+    //state for comments
+    const [commentPosted, setCommentPosted] = useState(false)
+
 
     useEffect(() => {
         setUserVote(0)
@@ -113,7 +119,8 @@ return (
         <img src={result.article_img_url} alt="article_image"/>
 
     </div>
-    <CommentList articleId={articleId} />
+    <AddComment setCommentPosted={setCommentPosted} user={props.user} articleId={articleId}/>
+    <CommentList commentPosted={commentPosted} articleId={articleId} />
     </>
 )
 

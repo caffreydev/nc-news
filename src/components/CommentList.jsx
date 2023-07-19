@@ -27,7 +27,7 @@ export const CommentList = (props) => {
             setLoading(false)
             setError(true)
         })
-    }, [])
+    }, [props.commentPosted])
 
     if (error) {
         return <p className="warning-text">{errMsg}</p>

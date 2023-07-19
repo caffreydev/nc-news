@@ -29,3 +29,7 @@ export const changeArticleVote = (articleId, value) => {
     inc_votes: value,
   });
 };
+
+export const postComment = (articleId, commentBody) => {
+  return instance.post(`/articles/${articleId}/comments`, commentBody);
+};
