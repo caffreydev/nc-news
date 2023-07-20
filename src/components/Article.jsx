@@ -120,7 +120,7 @@ return (
 
     </div>
     <AddComment setCommentPosted={setCommentPosted} user={props.user} articleId={articleId}/>
-    <CommentList commentPosted={commentPosted} articleId={articleId} />
+    <CommentList commentPosted={commentPosted} articleId={articleId} user={props.user}/>
     </>
 )
 

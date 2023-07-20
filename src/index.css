@@ -204,6 +204,16 @@ textarea {
 }
 
 
+.del-button {
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+}
+
+.del-button:hover {
+  background-color: blue;
+}
+
 
 
 @media screen and (max-width: 600px) {
