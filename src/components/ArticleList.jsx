@@ -1,4 +1,4 @@
-import { ArticleListItem } from "./"
+import { ArticleListItem, SearchForm } from "./"
 import { getArticles } from "../utils"
 import { useState, useEffect } from "react"
 
@@ -33,6 +33,7 @@ export const ArticleList = () => {
             <header>
                 <h1>Article Contents</h1>
             </header>
+            <SearchForm />
             <main>
             <ul className="article-list">
             {results.map(article => {
