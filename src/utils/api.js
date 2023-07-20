@@ -4,12 +4,18 @@ const instance = axios.create({
   baseURL: 'https://nc-news-jm.onrender.com/api',
 });
 
-export const getArticles = (topic = 'all') => {
-  let topicQuery = topic === 'all' ? '' : `&&topic=${topic}`;
+export const getArticles = (topic, order, sort_by) => {
+  let topicQuery = topic === 'all' ? '' : `&topic=${topic}`;
+  const orderQuery = `&order=${order}`;
+  const sortQuery = `&sort_by=${sort_by}`;
 
-  return instance.get(`/articles?limit=500${topicQuery}`).then(({ data }) => {
-    return data.articles;
-  });
+  console.log(`/articles?limit=500${topicQuery}${orderQuery}${sortQuery}`);
+
+  return instance
+    .get(`/articles?limit=500${topicQuery}${orderQuery}${sortQuery}`)
+    .then(({ data }) => {
+      return data.articles;
+    });
 };
 
 export const getArticle = (articleId) => {

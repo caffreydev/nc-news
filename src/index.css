@@ -258,6 +258,28 @@ textarea {
 
 
 
+/* formatting for search filters and sorts forms*/
+.search-prefs {
+  border: solid rgb(43, 14, 121) 4px;
+  padding: 18px;
+  
+}
+
+.search-prefs > label {
+  margin-right: 15px;
+  font-size: 1.3rem;
+}
+
+.search-prefs > label > select {
+  margin-left: 3px;
+  font-size: 1.2rem;
+}
+
+
+/* ends search form formatting */
+
+
+
 
 /* formatting for warnings, statuses, and errors */
 .warning-text {
