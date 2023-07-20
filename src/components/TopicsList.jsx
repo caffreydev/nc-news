@@ -36,7 +36,7 @@ if (error) {
 <ul>
 {results.map(el => {
     return (
-       <Link to={`/topics/${el.slug}`}>
+       <Link to={`/topics/${el.slug}`} key={el.slug}>
         <li className="topics-list-item" key={el.slug}>
         <h2>{titleCase(el.slug)}</h2>
         <p>{el.description}</p>

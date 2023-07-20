@@ -10,6 +10,7 @@ export const Topic = () => {
     const [results, setResults] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
 
 const {topicSlug} = useParams()
 
@@ -22,15 +23,20 @@ useEffect(() => {
         setResults(articles)
     })
     .catch((e) => {
+        if (e.response.status === 404) {
+            setErrorMessage(`There is no topic called ${topicSlug}`)
+        } else {
+            setErrorMessage("Oops, something went wrong! Please try again")
+        }
         setLoading(false)
         setError(true)
     })
 }, [topicSlug])
 
 if (error) {
-    return <h3>Oops, something went wrong! Please try again</h3>
+    return <p className="warning-text">{errorMessage}</p>
 } else if (loading) {
-    return <h3>Wait while the page loads</h3>
+    return <p className="loading-text">Wait while the page loads</p>
 } else {
     return (
         <>
