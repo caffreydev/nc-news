@@ -5,6 +5,8 @@ import { Navbar, Home, ArticleList, Article, BadPath, TopicsList } from './compo
 
 function App() {
  
+const [user, setUser] = useState("tickle122")
+//for dev purposes sets a user as default
 
 
   return (
@@ -14,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/home" element={<Home />}/>
         <Route path="/articles" element={<ArticleList />} />
-        <Route path="/articles/:articleId" element={<Article />} />
+        <Route path="/articles/:articleId" element={<Article  user={user}/>}/>
         <Route path="/topics" element={<TopicsList />} />
         <Route path="*" element={<BadPath />} />
       </Routes>

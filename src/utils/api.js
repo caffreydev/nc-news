@@ -33,3 +33,7 @@ export const changeArticleVote = (articleId, value) => {
 export const getTopics = () => {
   return instance.get('/topics');
 };
+
+export const postComment = (articleId, commentBody) => {
+  return instance.post(`/articles/${articleId}/comments`, commentBody);
+};
