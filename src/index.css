@@ -231,6 +231,31 @@ textarea {
 
 
 
+/* formatting for topics list */
+.topics-list-item {
+  display: flex;
+  flex-direction: column;
+  border: solid 3px black;
+  color: black;
+  max-width: 500px;
+  height: 150px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.topics-list-item:hover {
+  border-color: red;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+
+
+
+
+
+/*ends formatting for topics list  */
+
 
 
 

@@ -4,8 +4,10 @@ const instance = axios.create({
   baseURL: 'https://nc-news-jm.onrender.com/api',
 });
 
-export const getArticles = () => {
-  return instance.get('/articles?limit=500').then(({ data }) => {
+export const getArticles = (topic = 'all') => {
+  let topicQuery = topic === 'all' ? '' : `&&topic=${topic}`;
+
+  return instance.get(`/articles?limit=500${topicQuery}`).then(({ data }) => {
     return data.articles;
   });
 };
@@ -31,7 +33,7 @@ export const changeArticleVote = (articleId, value) => {
 };
 
 export const getTopics = () => {
-  return instance.get('/topics');
+  return instance.get('/topics').then(({ data }) => data.topics);
 };
 
 export const postComment = (articleId, commentBody) => {
