@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Route, Routes} from 'react-router-dom'
 
-import { Navbar, Home, ArticleList, Article, BadPath } from './components'
+import { Navbar, Home, ArticleList, Article, BadPath, TopicsList, Topic } from './components'
 
 function App() {
  
@@ -17,6 +17,8 @@ const [user, setUser] = useState("tickle122")
         <Route path="/home" element={<Home />}/>
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/articles/:articleId" element={<Article  user={user}/>}/>
+        <Route path="/topics" element={<TopicsList />} />
+        <Route path="/topics/:topicSlug" element={<Topic />} />
         <Route path="*" element={<BadPath />} />
       </Routes>
     </>

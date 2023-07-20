@@ -24,7 +24,7 @@ export const ArticleList = () => {
     }, [])
 
     if (error) {
-        return <h2>Oops, something went wrong! Please try again</h2>
+        return <h3>Oops, something went wrong! Please try again</h3>
     } else if (loading) {
         return <h3>Wait while the page loads</h3>
     } else {
