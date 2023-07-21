@@ -8,9 +8,6 @@ export const getArticles = (topic, order, sort_by) => {
   let topicQuery = topic === 'all' ? '' : `&topic=${topic}`;
   const orderQuery = `&order=${order}`;
   const sortQuery = `&sort_by=${sort_by}`;
-
-  console.log(`/articles?limit=500${topicQuery}${orderQuery}${sortQuery}`);
-
   return instance
     .get(`/articles?limit=500${topicQuery}${orderQuery}${sortQuery}`)
     .then(({ data }) => {
