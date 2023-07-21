@@ -46,3 +46,9 @@ export const postComment = (articleId, commentBody) => {
 export const deleteComment = (commentId) => {
   return instance.delete(`/comments/${commentId}`);
 };
+
+export const getUsers = () => {
+  return instance.get('/users').then(({ data }) => {
+    return data.users;
+  });
+};
