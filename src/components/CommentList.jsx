@@ -47,7 +47,7 @@ export const CommentList = (props) => {
         <ul className="comment-list">
 
         {result.map((comment) => {
-            return <CommentListItem comment={comment} key={comment.comment_id} />
+            return <CommentListItem comment={comment} key={comment.comment_id} user={props.user} />
         })}
         </ul>
         </section>

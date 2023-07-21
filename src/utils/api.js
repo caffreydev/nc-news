@@ -42,3 +42,7 @@ export const getTopics = () => {
 export const postComment = (articleId, commentBody) => {
   return instance.post(`/articles/${articleId}/comments`, commentBody);
 };
+
+export const deleteComment = (commentId) => {
+  return instance.delete(`/comments/${commentId}`);
+};
