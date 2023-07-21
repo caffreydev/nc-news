@@ -21,13 +21,6 @@ a:hover {
   color: #535bf2;
 }
 
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
 
 h1 {
   font-size: 3.2em;
@@ -66,6 +59,37 @@ button:focus-visible {
   }
 }
 
+/* formats home page */
+.home {
+  background-color: blue;
+  color: whitesmoke;
+  font-size: 1.4rem;
+  margin-left: 8px;
+  margin-bottom: 50px;
+}
+
+.home:hover {
+  border: solid red 3px;
+}
+
+.home-small {
+  background-color: blue;
+  color: whitesmoke;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  margin-bottom: 50px;
+}
+
+.home-small:hover {
+  border: solid red 3px;
+}
+
+
+
+/* ends formatting of home page */
+
+
+
 
 /* formats nav bar */
 
@@ -77,7 +101,11 @@ nav {
   margin: 0;
   background-color: burlywood;
   height: 8vh;
- 
+}
+
+nav > img {
+  height: 6vh;
+  margin-right: 8px;
 }
 
 nav .links {
@@ -97,7 +125,7 @@ nav .links > a {
 nav .links >a:hover {
   color: blue;
   font-weight: bolder;
-  text-shadow: 5px 5px 10px black ;
+  text-shadow: 5px 5px 10px white ;
 }
 
 
@@ -115,8 +143,7 @@ nav .links >a:hover {
 @media screen and (max-width: 600px) {
 
   nav {
-    
-   
+    overflow: auto;
     margin: 0;
     padding: 3px;
   }
@@ -289,6 +316,38 @@ textarea {
 /* ends search form formatting */
 
 
+
+/* formatting for login form */
+.login-form {
+  font-size: 1.3rem;
+  margin: 50px;
+}
+
+.login-form > label > select {
+  font-size: 1.3rem;
+}
+
+.login-form > label > select:hover {
+  cursor: pointer;
+  border: solid blue 2px;
+}
+
+.login-form > input {
+  font-size: 1.3rem;
+  margin-left: 15px;
+  border-radius: 80px;
+  color: whitesmoke;
+  background-color: blue;
+}
+
+.login-form > input:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
+
+
+/* ends formatting for login form */
 
 
 /* formatting for warnings, statuses, and errors */
