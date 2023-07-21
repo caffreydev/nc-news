@@ -34,7 +34,7 @@ export const Home = ({user}) => {
             <Link to="/articles"><button className="home">Head straight for the articles</button></Link>
 
             <br />
-            <p>Not you? Head here to login as someone else?</p>
+            <p>Not you? Head here to login as someone else</p>
             <Link to="/login"><button className="home">Login</button></Link>
 
         </main>
