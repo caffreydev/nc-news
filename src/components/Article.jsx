@@ -3,7 +3,7 @@ import { getArticle, dateFormatter, changeArticleVote } from "../utils"
 import { useParams } from "react-router-dom"
 import { AddComment, CommentList } from "./"
 
-export const Article = (props) => {
+export const Article = ({user}) => {
 
     //state for retrieving article data
     const [result, setResult] = useState({})
@@ -53,6 +53,12 @@ const {articleId} = useParams();
 
 //voting functions
 const upVote = () => {
+    if (user === "Guest") {
+        setVoteMessage("You must be logged in to vote!")
+        return
+    }
+
+
    setUserVote((currVote) => {
     if (currVote === 1) {
         setVoteMessage("You can only upvote once!")
@@ -75,6 +81,13 @@ const upVote = () => {
 }
 
 const downVote = () => {
+
+if (user === "Guest") {
+    setVoteMessage("You must be logged in to vote!")
+    return
+}
+
+
     setUserVote((currVote) => {
      if (currVote === -1) {
          setVoteMessage("You can only downvote once!")
@@ -119,8 +132,8 @@ return (
         <img src={result.article_img_url} alt="article_image"/>
 
     </div>
-    <AddComment setCommentPosted={setCommentPosted} user={props.user} articleId={articleId}/>
-    <CommentList commentPosted={commentPosted} articleId={articleId} user={props.user}/>
+    <AddComment setCommentPosted={setCommentPosted} user={user} articleId={articleId}/>
+    <CommentList commentPosted={commentPosted} articleId={articleId} user={user}/>
     </>
 )
 
