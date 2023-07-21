@@ -6,18 +6,19 @@ export const CommentListItem = (props) => {
 
 const [failedDelete, setFailedDelete] = useState(false)
 const [statusMessage, setStatusMessage] = useState("")
+const [showButton, setShowButton] = useState(true)
 const [deleted, setDeleted] = useState(false)
+
 
     const {comment, user} = props
     const {body, votes, author, created_at, comment_id} = comment
 
-    let ownComment = author === user;
+   
+  const ownComment = author === user
 
-
-
- 
     const handleDelete = () => {
         setStatusMessage("Please wait while comment is deleted")
+        setShowButton(false)
         setFailedDelete(false)
         deleteComment(comment_id)
         .then(() => {
@@ -25,6 +26,7 @@ const [deleted, setDeleted] = useState(false)
         })
         .catch(() => {
             setFailedDelete(true)
+            setShowButton(true)
             setStatusMessage("Comment was not deleted, please try again")
         })
 
@@ -42,7 +44,7 @@ const [deleted, setDeleted] = useState(false)
             <p>{body}</p>
             <p>Current votes: {votes}</p>
             <p className={failedDelete ? "warning-text" : "loading-text"}>{statusMessage}</p>
-            {ownComment ? <button onClick={handleDelete} className="del-button">Delete</button> : ""}
+            {ownComment && showButton ? <button onClick={handleDelete} className="del-button">Delete</button> : ""}
         </li>
     )
 
