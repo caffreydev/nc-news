@@ -1,7 +1,7 @@
-import { ArticleListItem } from "./"
+import { ArticleListItem, SearchForm} from "./"
 import { getArticles } from "../utils"
 import { useState, useEffect } from "react"
-
+import { useSearchParams } from "react-router-dom"
 
 import { useParams } from "react-router-dom"
 
@@ -14,10 +14,19 @@ export const Topic = () => {
 
 const {topicSlug} = useParams()
 
+const [searchParams, setSearchParams] = useSearchParams();
+
+
+
 useEffect(() => {
     setLoading(true)
     setError(false)
-    getArticles(topicSlug)
+
+    const order = searchParams.get("order") || "desc"
+const sort_by = searchParams.get("sort_by") || "created_at"
+
+
+    getArticles(topicSlug, order, sort_by)
     .then(articles => {     
         setLoading(false)
         setResults(articles)
@@ -31,7 +40,7 @@ useEffect(() => {
         setLoading(false)
         setError(true)
     })
-}, [topicSlug])
+}, [topicSlug, searchParams])
 
 if (error) {
     return <p className="warning-text">{errorMessage}</p>
@@ -44,6 +53,7 @@ if (error) {
             <h1>Article Contents</h1>
         </header>
         <main>
+        <SearchForm />
         <ul className="article-list">
         {results.map(article => {
             return <ArticleListItem key={article.article_id} article={article} />
