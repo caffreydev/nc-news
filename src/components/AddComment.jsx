@@ -3,6 +3,11 @@ import { postComment } from "../utils"
 
 export const AddComment = (props) => {
     
+if (props.user === "Guest") {
+    return <h3>Welcome guest, log in to join the disucssion and post a comment!</h3>
+}
+
+
 const [newComment, setNewComment] = useState('')
 const [commentPending, setCommentPending] = useState(false)
 const [commentSuccess, setCommentSuccess] = useState(false)
