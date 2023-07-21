@@ -13,6 +13,7 @@ export const SearchForm = ({setPrefsChanged}) => {
         ["Date Published", "created_at"],
         ["Alphabetical on Title", "title"],
         ["Most Votes", "votes"],
+        ["Most Commented", "comment_count"]
     ]
     const orderOptions = [ ["Descending", "desc"], ["Ascending", "asc"]]
 
