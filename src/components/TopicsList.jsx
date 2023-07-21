@@ -9,6 +9,8 @@ export const TopicsList = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
+
+    
     useEffect(() => {
         setLoading(true)
         setError(false)
