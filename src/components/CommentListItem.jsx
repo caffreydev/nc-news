@@ -11,7 +11,7 @@ const [deleted, setDeleted] = useState(false)
 
 
     const {comment, user} = props
-    const {body, votes, author, created_at, comment_id} = comment
+    const {body, votes, author, created_at, comment_id, avatar_url} = comment
 
    
   const ownComment = author === user
@@ -40,7 +40,10 @@ const [deleted, setDeleted] = useState(false)
 
     return (
         <li>
+            <div className="comment-author-wrapper">
             <h4>Penned by {author} on {dateFormatter(created_at)}</h4>
+            <img className="comment-avatar" src={avatar_url} alt="user avatar"/>
+            </div>
             <p>{body}</p>
             <p>Current votes: {votes}</p>
             <p className={failedDelete ? "warning-text" : "loading-text"}>{statusMessage}</p>

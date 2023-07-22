@@ -32,7 +32,7 @@ export const CommentList = (props) => {
     if (error) {
         return <p className="warning-text">{errMsg}</p>
     } else if (loading) {
-        return <p>Please wait while comments load</p>
+        return <p className="loading-text">Please wait while comments load</p>
     } else if (result.length === 0) {
         return (
             <>

@@ -34,9 +34,9 @@ const topic = "all"
     }, [searchParams])
 
     if (error) {
-        return <h3>Oops, something went wrong! Please try again</h3>
+        return <p className="warning-text">Oops, something went wrong! Please try again</p>
     } else if (loading) {
-        return <h3>Wait while the page loads</h3>
+        return <p className="loading-text">Wait while the page loads</p>
     } else {
         return (
             <>

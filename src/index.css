@@ -263,6 +263,18 @@ textarea {
 
 }
 
+.comment-author-wrapper {
+  display: flex;
+}
+
+
+.comment-avatar {
+  height: 5vh;
+  border: black solid 1px;
+  margin-left: 18px;
+}
+
+
 
 /* ends formatting for individual article page */
 
