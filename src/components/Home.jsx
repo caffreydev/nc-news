@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom"
+import { getTopics } from "../utils"
+import { useEffect } from "react"
 
 export const Home = ({user}) => {
 
     const loginPromptText = window.innerWidth < 700 ? "come back to this page to login" : "hit login on the navigation bar above"
 
+
+    useEffect(() => {
+        getTopics();
+    }, []) 
+    //Solely to 'wake up' the api server, which spins down on activity
+    //Avoids lag first time use of a feature that actually uses it
 
 
     if (user === "Guest") {
