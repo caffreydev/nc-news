@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { DropDown } from "./"
 import { useSearchParams } from "react-router-dom"
 
@@ -6,10 +5,7 @@ import { useSearchParams } from "react-router-dom"
 export const SearchForm = ({authorOptions}) => {
     const [searchParams, setSearchParams] = useSearchParams()
     
-
-
     //options for dropdowns format: [Name to display, value to pass to url]
-    
     const sortOptions =[
         ["Date Published", "created_at"],
         ["Alphabetical on Title", "title"],
@@ -74,6 +70,7 @@ export const SearchForm = ({authorOptions}) => {
                 <DropDown optionsArray={orderOptions} />
             </select>
         </label>
+        {window.innerWidth < 900 ? <br /> : ""}
         <label>
             Author:
             <select value={searchParams.get("author") || "all"} onChange={changeAuthor}>
