@@ -56,3 +56,7 @@ export const getUsers = () => {
     return data.users;
   });
 };
+
+export const changeCommentVote = (commentId, vote) => {
+  return instance.patch(`/comments/${commentId}`, { inc_votes: vote });
+};
