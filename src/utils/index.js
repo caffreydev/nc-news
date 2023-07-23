@@ -7,6 +7,7 @@ export {
   getTopics,
   deleteComment,
   getUsers,
+  changeCommentVote,
 } from './api.js';
 export { dateFormatter } from './date_formatter.js';
 
