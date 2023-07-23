@@ -35,10 +35,10 @@ export const Home = ({user}) => {
 
     return (
         <main>
-            <h1>Welcome {user}</h1>
-            <p>Great that you're logged in!<br/>
+            <h1>Welcome back {user}!</h1>
+            <h2>Great that you're logged in!<br/>
                 This way you can comment, and leave your feedback on articles!
-            </p>
+            </h2>
             <Link to="/articles"><button className="home">Head straight for the articles</button></Link>
 
             <br />
