@@ -11,7 +11,7 @@ const [deleted, setDeleted] = useState(false)
 
 //state for voting
 const [userVote, setUserVote] = useState(0)
-const [voteMessage, setVoteMessage] = useState("Click arrow to up vote or down vote")
+const [voteMessage, setVoteMessage] = useState("Use arrows to vote")
 
 
     const {comment, user} = props

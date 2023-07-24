@@ -13,7 +13,7 @@ export const Article = ({user}) => {
     
     //state for votes
     const [userVote, setUserVote] = useState(0)
-    const [voteMessage, setVoteMessage] = useState("Click arrow to up vote or down vote")
+    const [voteMessage, setVoteMessage] = useState("Use arrows to vote")
 
     //state for comments
     const [commentPosted, setCommentPosted] = useState(false)
@@ -21,7 +21,7 @@ export const Article = ({user}) => {
 
     useEffect(() => {
         setUserVote(0)
-        setVoteMessage("Click arrow to up vote or down vote")
+        setVoteMessage("Use arrows to vote")
     }, [window.location.hash]) //resets optimistic rendering when switching article via url
 
 
